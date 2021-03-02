@@ -1,14 +1,19 @@
-$(document).ready(function () {
-    // liffId: LIFF URL "https://liff.line.me/xxx"のxxxに該当する箇所
-    // LINE DevelopersのLIFF画面より確認可能
-    var liffId = "1654150367-Agq5Vdp1";
-    initializeLiff(liffId);
+// LIFF ID: LIFF URL "https://liff.line.me/xxx"のxxxに該当する箇所
+// ※ LINE Developers内「LIFFアプリ詳細」に記載
+//    トップ > (プロバイダー名) > (チャネル名) > LIFF
+const LIFF_ID = "1655711108-wvmj8Jna";
+
+$(function () {
+	initializeLiff();
 })
 
-function initializeLiff(liffId) {
+/**
+ * LIFFを初期化する。
+ */
+function initializeLiff() {
     liff
         .init({
-            liffId: liffId
+            liffId: LIFF_ID
         })
         .then(() => {
             // Webブラウザからアクセスされた場合は、LINEにログインする
